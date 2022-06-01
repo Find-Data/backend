@@ -1,6 +1,6 @@
 package com.grupo3.finddata.repositorys;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Optional;
 
@@ -10,22 +10,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.grupo3.finddata.classes.Cidade;
+import com.grupo3.finddata.classes.Cnae;
 
 @SpringBootTest
 @Transactional
-class CidadeRepositoryTest 
-{
-	
+class CnaeRepositoryTest {
+
 	@Autowired
-	CidadeRepository repo;
+	CnaeRepository repo;
 	
 	@Test
 	@Rollback
-	void testSelectCidadeCnpj() 
+	void testSelectCnae() 
 	{	
-		Optional<Cidade> cid = repo.findById(1L);
-		assertTrue(cid.get() != null);
+		Optional<Cnae> cnae = repo.findById(1L);
+		assertTrue(cnae.get() != null);
 	}
-	
 }

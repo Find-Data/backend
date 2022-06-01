@@ -1,6 +1,6 @@
 package com.grupo3.finddata.repositorys;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Optional;
 
@@ -10,22 +10,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.grupo3.finddata.classes.Cidade;
+import com.grupo3.finddata.classes.Consumo;
 
 @SpringBootTest
 @Transactional
-class CidadeRepositoryTest 
-{
-	
+class ConsumoRepositoryTest {
+
 	@Autowired
-	CidadeRepository repo;
+	ConsumoRepository repo;
 	
 	@Test
 	@Rollback
-	void testSelectCidadeCnpj() 
+	void testSelectConsumo() 
 	{	
-		Optional<Cidade> cid = repo.findById(1L);
-		assertTrue(cid.get() != null);
+		Optional<Consumo> con = repo.findById(1L);
+		assertTrue(con.get() != null);
 	}
-	
+
 }
