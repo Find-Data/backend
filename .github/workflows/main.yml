@@ -23,6 +23,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+        
+    - name: Clean
+      run: mvn clean 
 
     - name: Build
       run: mvn --batch-mode -DskipTests package
