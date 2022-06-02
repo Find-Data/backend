@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: mvn --batch-mode -DskipTests package
 
-    - name: Test
+    - name: Tests
       run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
     - name: Build and push Docker Image
